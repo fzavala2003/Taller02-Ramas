@@ -31,7 +31,8 @@ public class PrimaryController {
 
     public void initialize() {
         listaCanciones = Cancion.leerCanciones();
-        Collections.sort(listaCanciones);
+        //Collections.sort(listaCanciones);
+        Collections.sort(listaCanciones, (c1, c2) -> Integer.compare(c2.getPosActual(), c1.getPosActual()));
         for (Cancion c : listaCanciones ) {
 
             HBox hb = new HBox(10);//hbox para ubicar info de cada cancion
